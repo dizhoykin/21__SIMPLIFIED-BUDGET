@@ -11,20 +11,32 @@
 
 <body>
 
+  <template id="expenses-node">
+    <div class="expenses-item">
+      <div class="expenses-item--name">Starbucks</div>
+      <div class="expenses-item--amount">$5.54</div>
+      <div class="delete expenses-item--delete">
+        <button name="delete-expense" class="delete-expense">
+          <img src="./images/trash.svg" alt="Tash" />
+        </button>
+      </div>
+    </div>
+  </template>
+
   <div class="wrapper">
     <div class="add-panel">
       <h1>Simplified Budget</h1>
       <div class="field">
-        <input type="text" name="income" id="income" />
+        <input type="number" name="income" id="income" />
         <label for="income">Budget Amount</label>
       </div>
       <div class="add-expense">
         <div class="field">
-          <input type="text" name="expense-name" id="expense-name" />
+          <input type="text" name="expense-name" id="expense-name" required/>
           <label for="expense-name">Expense</label>
         </div>
         <div class="field">
-          <input type="text" name="expense-amount" id="expense-amount" />
+          <input type="number" name="expense-amount" id="expense-amount" required/>
           <label for="expense-amount">Amount</label>
         </div>
         <button name="add-expense-button" id="add-expense-button" class="add-expense-button">
@@ -36,52 +48,28 @@
     <div class="expenses-panel">
       <h2>Expenses</h2>
       <div class="expense-table">
-
-        <div>Starbucks</div>
-        <div>$5.54</div>
-        <div class="delete">
-          <button name="delete-expense" class="delete-expense">
-            <img src="./images/trash.svg" alt="Tash" />
-          </button>
-        </div>
-
-        <div>Starbucks</div>
-        <div>$5.54</div>
-        <div class="delete">
-          <button name="delete-expense" class="delete-expense">
-            <img src="./images/trash.svg" alt="Tash" />
-          </button>
-        </div>
-
-        <div>Starbucks</div>
-        <div>$5.54</div>
-        <div class="delete">
-          <button name="delete-expense" class="delete-expense">
-            <img src="./images/trash.svg" alt="Tash" />
-          </button>
-        </div>
-
       </div>
     </div>
 
     <div class="summary-panel">
       <div class="summary-item">
         <div class="summary-label">Income</div>
-        <div class="summary-amount">$42,000.00</div>
+        <div class="summary-amount summary-amount--income">0</div>
       </div>
 
       <div class="summary-item">
         <div class="summary-label">Expenses</div>
-        <div class="summary-amount">$42,000.00</div>
+        <div class="summary-amount summary-amount--expenses">0</div>
       </div>
 
       <div class="summary-item">
         <div class="summary-label">Balance</div>
-        <div class="summary-amount">$42,000.00</div>
+        <div class="summary-amount summary-amount--balance">0</div>
       </div>
     </div>
   </div>
 
+  <script src='app.js'></script>
 </body>
 
 </html>
